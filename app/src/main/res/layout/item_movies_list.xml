@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content" tools:ignore="ExtraText">
+
+    <ImageView
+            android:layout_width="128dp"
+            android:layout_height="96dp"
+            app:srcCompat="@drawable/ic_photoloading"
+            android:id="@+id/ivMoviePoster"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:contentDescription="@string/photo"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/tvMovieTitle"
+            android:layout_marginEnd="8dp"/>
+
+    <TextView
+            android:text="@string/movieTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvMovieTitle"
+            app:layout_constraintStart_toEndOf="@+id/ivMoviePoster"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintHorizontal_bias="0.455"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="16dp"
+            android:fontFamily="Roboto"
+            android:textStyle="bold"
+            android:typeface="normal"/>
+
+    <TextView
+            android:text="@string/movieGenre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvMovieGenre"
+            android:fontFamily="Roboto"
+            android:textStyle="bold"
+            android:typeface="normal"
+            app:layout_constraintTop_toBottomOf="@+id/tvMovieTitle"
+            app:layout_constraintEnd_toEndOf="@+id/tvMovieTitle"
+            app:layout_constraintStart_toStartOf="@+id/tvMovieTitle"
+            android:layout_marginTop="12dp"/>
+
+    <TextView
+            android:text="@string/movieYear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvMovieYear"
+            app:layout_constraintStart_toStartOf="@+id/tvMovieGenre"
+            app:layout_constraintEnd_toEndOf="@+id/tvMovieGenre"
+            app:layout_constraintTop_toBottomOf="@+id/tvMovieGenre"
+            app:layout_constraintHorizontal_bias="1.0"
+            android:fontFamily="Roboto"
+            android:textStyle="bold"
+            android:typeface="normal"
+            android:layout_marginTop="12dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

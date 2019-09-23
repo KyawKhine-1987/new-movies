@@ -1,0 +1,80 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.android.freelance.movies"
+        minSdkVersion 22
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // Retrofit
+    def retrofit_version = '2.6.1'
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    def converterforGsonandRxJava2_version = '2.3.0'
+    implementation "com.squareup.retrofit2:converter-gson:$converterforGsonandRxJava2_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$converterforGsonandRxJava2_version"
+
+    // RxJava2
+    def rxjava2_rxandroid_version = '2.0.2'
+    implementation "io.reactivex.rxjava2:rxandroid:$rxjava2_rxandroid_version"
+    def rxjava2_rxjava_version = '2.1.17'
+    implementation "io.reactivex.rxjava2:rxjava:$rxjava2_rxjava_version"
+
+    // RecyclerView
+    def recyclerview_version = '1.0.0'
+    implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
+
+    // Glide
+    def glide_version = '4.8.0'
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
+
+    // ViewModel
+    def lifecycle_version = '2.2.0-alpha04'
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    //solved this error "Unresolved reference: ViewModelProviders"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+
+    // Room
+    def room_version = '2.2.0-rc01'
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+//Add some suspense feature in interface of FilmsDao to room db.
+
+    // Kotlin Android Coroutines
+    def kotlinxCoroutines_Version = '1.1.1'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinxCoroutines_Version"
+
+    //Kodein Dependency Injection
+    def kodein_version = '6.2.1'
+    implementation "org.kodein.di:kodein-di-generic-jvm:$kodein_version"
+    implementation "org.kodein.di:kodein-di-framework-android-x:$kodein_version"
+}

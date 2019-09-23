@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">New Movies</string>
+
+    <string name="photo">films</string>
+    <string name="movieTitle">Title</string>
+    <string name="movieGenre">Genre</string>
+    <string name="movieYear">Year</string>
+    <string name="NIC">No Internet Connection!</string>
+    <string name="m">Movies Name</string>
+    <string name="title">Title</string>
+    <string name="year">Year</string>
+    <string name="ml">Movies List</string>
+    <string name="md">Movies Detail</string>
+</resources>
